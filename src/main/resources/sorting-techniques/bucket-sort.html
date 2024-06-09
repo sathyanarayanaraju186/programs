@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bucket-sort</title>
+</head>
+<body>
+
+<!--Place a back button to refer different-sortings.html-->
+<a href="different-sortings.html">Back</a>
+<h1>Bucket Sort</h1>
+<p>Bucket Sort is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm.</p>
+<h2>Example:</h2>
+<h3>First Pass:</h3>
+<ul>
+    <li>38 27 43 3 9 82 10</li>
+    <li>3 9 10 27 38 43 82</li>
+</ul>
+<p>The time complexity of bucket sort is O(n^2) in the worst case and O(n+k) in the best case, where n is the number of elements and k is the number of buckets.</p>
+<p>The space complexity of bucket sort is O(n+k).</p>
+<p>The main advantage of bucket sort is that it is efficient for small datasets.</p>
+<p>The main disadvantage of bucket sort is that it is not suitable for large datasets.</p>
+<h2>Java Code:</h2>
+<pre>
+public class BucketSort {
+    public static void main(String[] args) {
+        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        bucketSort(arr);
+        System.out.println("Sorted array");
+        printArray(arr);
+    }
+
+    static void bucketSort(int[] arr) {
+        int n = arr.length;
+        int[] bucket = new int[n];
+        for (int i = 0; i < n; i++) {
+            bucket[i] = 0;
+        }
+
+        for (int i = 0; i < n; i++) {
+            bucket[arr[i]]++;
+        }
+
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < bucket[i]; j++) {
+                arr[index++] = i;
+            }
+        }
+    }
+
+    static void printArray(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
+</pre>
+</body>
+</html>

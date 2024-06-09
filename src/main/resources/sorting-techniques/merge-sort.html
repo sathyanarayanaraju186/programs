@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>merge-sort</title>
+</head>
+<body>
+
+<!--Place a back button to refer different-sortings.html-->
+<a href="different-sortings.html">Back</a>
+<h1>Merge Sort</h1>
+<p>Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.</p>
+<h2>Example:</h2>
+<h3>First Pass:</h3>
+<ul>
+    <li>38 27 43 3 9 82 10</li>
+    <li>27 38 43 3 9 10 82</li>
+</ul>
+<h3>Second Pass:</h3>
+<ul>
+    <li>27 38 43 3 9 10 82</li>
+    <li>3 9 10 27 38 43 82</li>
+</ul>
+<h3>Third Pass:</h3>
+<ul>
+    <li>3 9 10 27 38 43 82</li>
+    <li>3 9 10 27 38 43 82</li>
+</ul>
+<p>The time complexity of merge sort is O(nLogn) in all three cases (worst, average, and best) as the mergesort always divides the array into two halves and takes linear time to merge two halves.</p>
+<p>The space complexity of merge sort is O(n).</p>
+<p>The main advantage of merge sort is that it is stable and has a time complexity of O(nLogn).</p>
+<p>The main disadvantage of merge sort is that it requires additional memory space of O(n).</p>
+<h2>Java Code:</h2>
+<pre>
+public class MergeSort {
+    public static void main(String[] args) {
+        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        mergeSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted array");
+        printArray(arr);
+    }
+
+    static void mergeSort(int[] arr, int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
+            mergeSort(arr, l, m);
+            mergeSort(arr, m + 1, r);
+            merge(arr, l, m, r);
+        }
+    }
+
+    static void merge(int[] arr, int l, int m, int r) {
+        int[] L = Arrays.copyOfRange(arr, l, m + 1);
+        int[] R = Arrays.copyOfRange(arr, m + 1, r + 1);
+
+        int i = 0, j = 0, k = l;
+        while (i < L.length && j < R.length) {
+            if (L[i] <= R[j]) {
+                arr[k++] = L[i++];
+            } else {
+                arr[k++] = R[j++];
+            }
+        }
+
+        while (i < L.length) {
+            arr[k++] = L[i++];
+        }
+
+        while (j < R.length) {
+            arr[k++] = R[j++];
+        }
+    }
+
+    static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+}
+</pre>
+</body>
+</html>

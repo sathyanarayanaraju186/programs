@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertion-sort</title>
+</head>
+<body>
+<!--Place a back button to refer different-sortings.html-->
+<a href="different-sortings.html">Back</a>
+<h1>Insertion Sort</h1>
+<p>Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.</p>
+<h2>Example:</h2>
+<h3>First Pass:</h3>
+<ul>
+    <li>12, 11, 13, 5, 6</li>
+    <li>11, 12, 13, 5, 6</li>
+</ul>
+<h3>Second Pass:</h3>
+<ul>
+    <li>11, 12, 13, 5, 6</li>
+    <li>11, 12, 13, 5, 6</li>
+</ul>
+<h3>Third Pass:</h3>
+<ul>
+    <li>11, 12, 13, 5, 6</li>
+    <li>5, 11, 12, 13, 6</li>
+</ul>
+<h3>Fourth Pass:</h3>
+<ul>
+    <li>5, 11, 12, 13, 6</li>
+    <li>5, 6, 11, 12, 13</li>
+</ul>
+<p>The time complexity of insertion sort is O(n^2) as there are two nested loops.</p>
+<p>The space complexity of insertion sort is O(1).</p>
+<p>The main advantage of insertion sort is the simplicity of the algorithm.</p>
+<p>The main disadvantage of insertion sort is its time complexity. It is not suitable for large datasets.</p>
+<h2>Java Code:</h2>
+<pre>
+public class InsertionSort {
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6};
+        insertionSort(arr);
+        System.out.println("Sorted array");
+        printArray(arr);
+    }
+
+    static void insertionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+
+            /* Move elements of arr[0..i-1], that are greater than key, to one position ahead of their current position */
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    static void printArray(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+}
+</pre>
+</body>
+</html>
