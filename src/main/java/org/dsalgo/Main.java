@@ -9,4 +9,5 @@ public class Main {
         linkedList.append(50);
         linkedList.printList();
     }
+
 }
