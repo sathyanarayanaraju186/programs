@@ -1,8 +1,0 @@
-
-}
-java:S1854":Remove this useless assignment to local variable "ascArr".(ÑïÏ£8È–’ßÿ1J$9c215257-153b-4cfc-aba6-495df330fcb7
-n
-java:S1481"+Remove this unused "ascArr" local variable.(ÑïÏ£8È–’ßÿ1J$6a580306-6817-4a7b-923e-b311f3cc327f
-m	java:S106"+Replace this use of System.out by a logger.( ÔÎµ8È–’ßÿ1J$51c42aee-77da-4adf-b282-370a463e4cc3
-š
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ª¨ë×þÿÿÿÿ8È–’ßÿ1J$ae45829e-e6df-47a9-89e2-b5de05087ec5
