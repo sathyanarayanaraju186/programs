@@ -27,9 +27,15 @@ public class BubbleSort {
      */
     public int[] bubbleSort(int[] arr) {
         int n = arr.length;
+        // iterate through all elements
         for (int i = 0; i < n - 1; i++) {
+            // flag to check if any swapping is done in the inner loop
             boolean swapped = false;
+
+            // iterate through all elements except the last i elements
             for (int j = 0; j < n - i - 1; j++) {
+
+                // if the element is greater than the next element, swap them
                 if (arr[j] > arr[j + 1]) {
                     // swap arr[j] and arr[j+1]
                     int temp = arr[j];
