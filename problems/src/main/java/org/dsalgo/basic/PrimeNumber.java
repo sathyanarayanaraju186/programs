@@ -11,7 +11,7 @@ public class PrimeNumber {
     private static void printPrimeNumbersOptimizedMedium(final int n) {
         boolean isPrime = true;
         for (int i = 2; i <= n / 2; i++) {
-            if (n % 2 == 0) {
+            if (n % i == 0) {
                 isPrime = false;
                 break;
             }
@@ -26,7 +26,7 @@ public class PrimeNumber {
     private static void printPrimeNumbersOptimized(final int n) {
         boolean isPrime = true;
         for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % 2 == 0) {
+            if (n % i == 0) {
                 isPrime = false;
                 break;
             }
@@ -41,7 +41,7 @@ public class PrimeNumber {
     private static void printPrimeNumbersBrutForce(final int n) {
         boolean isPrime = true;
         for (int i = 2; i < n; i++) {
-            if (n % 2 == 0) {
+            if (n % i == 0) {
                 isPrime = false;
                 break;
             }

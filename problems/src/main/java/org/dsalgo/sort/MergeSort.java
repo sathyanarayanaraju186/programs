@@ -24,12 +24,18 @@ public class MergeSort {
      *         ending index
      */
     public static void mergeSort(int[] input, int start, int end) {
+        // base condition
         if (end - start < 2) {
             return;
         }
+        // divide the array into two parts
         int mid = (start + end) / 2;
+
+        // recursively sort the two parts
         mergeSort(input, start, mid);
         mergeSort(input, mid, end);
+
+        // merge the sorted parts
         merge(input, start, mid, end);
     }
 

@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jpa-mappings" />
         <module name="jacksonExample" />
+        <module name="problems" />
       </profile>
     </annotationProcessing>
   </component>
