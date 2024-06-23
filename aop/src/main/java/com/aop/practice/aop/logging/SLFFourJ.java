@@ -1,4 +1,4 @@
-package com.aop.practice.aop.logging.service;
+package com.aop.practice.aop.logging;
 
 import jakarta.annotation.PostConstruct;
 
@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class SLFFourJ {
-    @PostConstruct
+//    @PostConstruct
     public void log() {
         // Generally we use "log" as the logger object name by default,
         // but we can use any name we want to use by using lombok.config file to set the default logger name

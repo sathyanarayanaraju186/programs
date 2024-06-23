@@ -1,4 +1,4 @@
-package com.aop.practice.aop.logging.service;
+package com.aop.practice.aop.logging;
 
 import jakarta.annotation.PostConstruct;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class LOGGING_EXAMPLE {
     private static final Logger logger = LoggerFactory.getLogger(LOGGING_EXAMPLE.class);
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         // log levels in order of increasing severity: TRACE < DEBUG < INFO < WARN < ERROR
         // By default, the log level is set to INFO in the application.properties file.
